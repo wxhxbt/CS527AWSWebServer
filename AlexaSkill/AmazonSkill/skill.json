@@ -1,0 +1,73 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "You can query the instacart database in our webserver using SQL command or other commands.",
+          "examplePhrases": [
+            "Alexa open database system",
+            "help",
+            "where is coke?"
+          ],
+          "keywords": [
+            "Database"
+          ],
+          "name": "Database Query Assistant",
+          "description": "First, you can go to our Web page which is http://ec2-18-217-249-18.us-east-2.compute.amazonaws.com:8000/home/ to check the tables and attributes we have in Instacart Database. And then you can go to the Alexa page and say \u0027help\u0027. You will find some instructions there and you can follow them to play with our data.",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "sourceLocaleForLanguages": [
+          {
+            "sourceLocale": "en-US",
+            "language": "en"
+          }
+        ],
+        "isActive": true
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.\nFirst, go to http://ec2-18-217-249-18.us-east-2.compute.amazonaws.com:8000/alexa/. It is the main page of our interaction. All the data will appear on that page.\nThen you need to say, open database system, to start it. And you can say, help, to get some instruction on the page. And you can follow the instruction to play with our data.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:763451442031:function:71c0f8e0-8b17-4c64-bc11-17b845ad0362:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:763451442031:function:71c0f8e0-8b17-4c64-bc11-17b845ad0362:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:763451442031:function:71c0f8e0-8b17-4c64-bc11-17b845ad0362:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:763451442031:function:71c0f8e0-8b17-4c64-bc11-17b845ad0362:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

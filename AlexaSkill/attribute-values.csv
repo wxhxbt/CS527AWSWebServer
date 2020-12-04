@@ -1,0 +1,20 @@
+﻿min,,smallest,minimum of,minimum
+max,,biggest,largest,maximum of,max of
+avg,,average of,average
+sum,,summation of,sum of,summation
+count,,number of,count of
+star,,all,star
+reordered,
+add_to_cart_order,,add two cart order,add to cart order
+days_since_prior_order,,day since prior order,days since prior order
+order_hour_of_day,,order or off day,order hour off day,order or of day,order hour of day
+order_dow,,order day off week,order day of week
+order_number,,order number
+user_id,,user i. d.,user id
+order_id,,older i. d.,older id,order i. d.,order id
+product_name,,protect name,product name
+product_id,,protect i. d.,protect id,product i. d.,product id
+aisle,
+aisle_id,,aisle i. d.,aisle id
+department,
+department_id,,department i. d.,department id

@@ -1,0 +1,10 @@
+﻿show me all the products in the area of {aisles}
+"show me all the products in the aisle of {aisles} "
+show me all the products in the {aisles} aisle
+show me all the products in the {aisles} area
+find top {num} {target} that has the {seq} products
+find top {num} {target} which has the {seq} products
+find top {num} {target} with the {seq} products
+find the {target} that has the {seq} products
+find the {target} which has the {seq} products
+find the {target} with the {seq} products

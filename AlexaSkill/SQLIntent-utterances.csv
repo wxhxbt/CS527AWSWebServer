@@ -1,0 +1,25 @@
+﻿select {attribute} {attribute_two} {attribute_three} from {table} group by {group_attr}
+select {attribute} {attribute_two} from {table} natural join {table_two} natural join {table_three}
+select {attribute} {attribute_two} from {table} natural join {table_two}
+select top {number}  {attribute} from {table} natural join {table_two} natural join {table_three}
+select {attribute} from {table} natural join {table_two} natural join {table_three} {limit} {number}
+select {attribute} from {table} natural join {table_two} natural join {table_three}
+select top {number} {attribute} from {table} natural join {table_two}
+"select {attribute} from {table} natural join {table_two} {limit} {number} "
+select {attribute} from {table} natural join {table_two}
+select {attribute} {attribute_two} {attribute_three} {attribute_four} from {table}
+select {attribute} {attribute_two} {attribute_three} from {table}
+select top {number} {attribute} {attribute_two} {attribute_three} from {table}
+select {attribute} {attribute_two} {attribute_three}  from {table} {where} {filter_attr} {operator} {filter_value}
+select {attribute} {attribute_two} {attribute_three} {attribute_four} from {table} {where} {filter_attr} {operator} {filter_value}
+select {attribute} {attribute_two} from {table} {where} {filter_attr} {operator} {filter_value}
+select {attribute} from {table} {where} {filter_attr} {operator} {filter_value}
+select top {number} {attribute} from {table}
+select top {number} {attribute} {attribute_two} from {table}
+select {attribute} {attribute_two} from {table}
+select {attribute} from {table}
+select top {number} {attribute} {attribute_two} {attribute_three} {attribute_four} from {table}
+select {attribute} {attribute_two} {attribute_three} {attribute_four}  from {table} {limit} {number}
+select {attribute} {attribute_two} {attribute_three} from {table} {limit} {number}
+select {attribute} {attribute_two} from {table} {limit} {number}
+select {attribute} from {table} {limit} {number}

@@ -1,0 +1,2488 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "database system",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SQLIntent",
+          "slots": [
+            {
+              "name": "attribute",
+              "type": "attribute",
+              "multipleValues": {
+                "enabled": false
+              }
+            },
+            {
+              "name": "attribute_two",
+              "type": "attribute"
+            },
+            {
+              "name": "attribute_three",
+              "type": "attribute"
+            },
+            {
+              "name": "attribute_four",
+              "type": "attribute"
+            },
+            {
+              "name": "table",
+              "type": "table",
+              "multipleValues": {
+                "enabled": false
+              }
+            },
+            {
+              "name": "where",
+              "type": "where"
+            },
+            {
+              "name": "filter_attr",
+              "type": "attribute"
+            },
+            {
+              "name": "operator",
+              "type": "operator"
+            },
+            {
+              "name": "filter_value",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "limit",
+              "type": "limit"
+            },
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "table_two",
+              "type": "table"
+            },
+            {
+              "name": "table_three",
+              "type": "table"
+            },
+            {
+              "name": "group_attr",
+              "type": "attribute"
+            }
+          ],
+          "samples": [
+            "select {attribute} {attribute_two} {attribute_three} from {table} group by {group_attr}",
+            "select {attribute} {attribute_two} from {table} natural join {table_two} natural join {table_three}",
+            "select {attribute} {attribute_two} from {table} natural join {table_two}",
+            "select top {number}  {attribute} from {table} natural join {table_two} natural join {table_three}",
+            "select {attribute} from {table} natural join {table_two} natural join {table_three} {limit} {number}",
+            "select {attribute} from {table} natural join {table_two} natural join {table_three}",
+            "select top {number} {attribute} from {table} natural join {table_two}",
+            "select {attribute} from {table} natural join {table_two} {limit} {number} ",
+            "select {attribute} from {table} natural join {table_two}",
+            "select {attribute} {attribute_two} {attribute_three} {attribute_four} from {table}",
+            "select {attribute} {attribute_two} {attribute_three} from {table}",
+            "select top {number} {attribute} {attribute_two} {attribute_three} from {table}",
+            "select {attribute} {attribute_two} {attribute_three}  from {table} {where} {filter_attr} {operator} {filter_value}",
+            "select {attribute} {attribute_two} {attribute_three} {attribute_four} from {table} {where} {filter_attr} {operator} {filter_value}",
+            "select {attribute} {attribute_two} from {table} {where} {filter_attr} {operator} {filter_value}",
+            "select {attribute} from {table} {where} {filter_attr} {operator} {filter_value}",
+            "select top {number} {attribute} from {table}",
+            "select top {number} {attribute} {attribute_two} from {table}",
+            "select {attribute} {attribute_two} from {table}",
+            "select {attribute} from {table}",
+            "select top {number} {attribute} {attribute_two} {attribute_three} {attribute_four} from {table}",
+            "select {attribute} {attribute_two} {attribute_three} {attribute_four}  from {table} {limit} {number}",
+            "select {attribute} {attribute_two} {attribute_three} from {table} {limit} {number}",
+            "select {attribute} {attribute_two} from {table} {limit} {number}",
+            "select {attribute} from {table} {limit} {number}"
+          ]
+        },
+        {
+          "name": "AisleDepAdvIntent",
+          "slots": [
+            {
+              "name": "target",
+              "type": "table"
+            },
+            {
+              "name": "seq",
+              "type": "sequence"
+            },
+            {
+              "name": "num",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "aisles",
+              "type": "aisleName"
+            }
+          ],
+          "samples": [
+            "show me all the products in the area of {aisles}",
+            "show me all the products in the aisle of {aisles} ",
+            "show me all the products in the {aisles} aisle",
+            "show me all the products in the {aisles} area",
+            "find top {num} {target} that has the {seq} products",
+            "find top {num} {target} which has the {seq} products",
+            "find top {num} {target} with the {seq} products",
+            "find the {target} that has the {seq} products",
+            "find the {target} which has the {seq} products",
+            "find the {target} with the {seq} products"
+          ]
+        },
+        {
+          "name": "ProductAdvIntent",
+          "slots": [
+            {
+              "name": "seq",
+              "type": "sequence"
+            },
+            {
+              "name": "num",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "dep",
+              "type": "department"
+            },
+            {
+              "name": "reorder",
+              "type": "IsReordered"
+            },
+            {
+              "name": "product",
+              "type": "productName"
+            }
+          ],
+          "samples": [
+            "find the location of {product}",
+            "where is {product}",
+            "find the location of the product {product}",
+            "where is the product {product}",
+            "find top {num} products which has the {seq} {reorder} ratio in {dep}",
+            "find top {num} products with the {seq} {reorder} ratio in {dep}",
+            "Which product has the {seq} {reorder} ratio in {dep}",
+            "find the product with the {seq} {reorder} ratio in {dep}",
+            "Which product has the {seq} {reorder} ratio",
+            "find top {num} products which has the {seq} {reorder} ratio",
+            "find the product which has the {seq} {reorder} ratio",
+            "find top {num} products with the {seq} {reorder} ratio",
+            "find the product with the {seq} {reorder} ratio",
+            "what is the {seq} popular product in {dep}",
+            "what is the {seq} popular product",
+            "find top {num} {seq} popular products in {dep}",
+            "find the {seq} product in {dep}",
+            "find top {num} {seq} popular products",
+            "find the {seq} popular product"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "min",
+                "synonyms": [
+                  "smallest",
+                  "minimum of",
+                  "minimum"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "max",
+                "synonyms": [
+                  "biggest",
+                  "largest",
+                  "maximum of",
+                  "max of"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "avg",
+                "synonyms": [
+                  "average of",
+                  "average"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sum",
+                "synonyms": [
+                  "summation of",
+                  "sum of",
+                  "summation"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "count",
+                "synonyms": [
+                  "number of",
+                  "count of"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "star",
+                "synonyms": [
+                  "all",
+                  "star"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "reordered"
+              }
+            },
+            {
+              "name": {
+                "value": "add_to_cart_order",
+                "synonyms": [
+                  "add two cart order",
+                  "add to cart order"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "days_since_prior_order",
+                "synonyms": [
+                  "day since prior order",
+                  "days since prior order"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "order_hour_of_day",
+                "synonyms": [
+                  "order or off day",
+                  "order hour off day",
+                  "order or of day",
+                  "order hour of day"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "order_dow",
+                "synonyms": [
+                  "order day off week",
+                  "order day of week"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "order_number",
+                "synonyms": [
+                  "order number"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "user_id",
+                "synonyms": [
+                  "user i. d.",
+                  "user id"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "order_id",
+                "synonyms": [
+                  "older i. d.",
+                  "older id",
+                  "order i. d.",
+                  "order id"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "product_name",
+                "synonyms": [
+                  "protect name",
+                  "product name"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "product_id",
+                "synonyms": [
+                  "protect i. d.",
+                  "protect id",
+                  "product i. d.",
+                  "product id"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "aisle"
+              }
+            },
+            {
+              "name": {
+                "value": "aisle_id",
+                "synonyms": [
+                  "aisle i. d.",
+                  "aisle id"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "department"
+              }
+            },
+            {
+              "name": {
+                "value": "department_id",
+                "synonyms": [
+                  "department i. d.",
+                  "department id"
+                ]
+              }
+            }
+          ],
+          "name": "attribute"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "ORDER_PRODUCT",
+                "synonyms": [
+                  "older protect",
+                  "order protect",
+                  "older product",
+                  "order products",
+                  "order product"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "`ORDER`",
+                "synonyms": [
+                  "olders",
+                  "older",
+                  "orders",
+                  "order"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "PRODUCT",
+                "synonyms": [
+                  "protects",
+                  "protect",
+                  "products",
+                  "product"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "AISLE",
+                "synonyms": [
+                  "aisles",
+                  "aisle"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "DEPARTMENT",
+                "synonyms": [
+                  "departments",
+                  "department"
+                ]
+              }
+            }
+          ],
+          "name": "table"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "limit",
+                "synonyms": [
+                  "limits",
+                  "limit"
+                ]
+              }
+            }
+          ],
+          "name": "limit"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "where",
+                "synonyms": [
+                  "ware",
+                  "where",
+                  "wear"
+                ]
+              }
+            }
+          ],
+          "name": "where"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "!\u003d",
+                "synonyms": [
+                  "unequal to",
+                  "not equal to"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "\u003e",
+                "synonyms": [
+                  "greater than",
+                  "bigger than"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "\u003c",
+                "synonyms": [
+                  "less than",
+                  "smaller than"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "\u003d",
+                "synonyms": [
+                  "is",
+                  "equal to",
+                  "equals"
+                ]
+              }
+            }
+          ],
+          "name": "operator"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "asc",
+                "synonyms": [
+                  "fewest",
+                  "smallest",
+                  "least"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "desc",
+                "synonyms": [
+                  "biggest",
+                  "largest",
+                  "most"
+                ]
+              }
+            }
+          ],
+          "name": "sequence"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "alcohol"
+              }
+            },
+            {
+              "name": {
+                "value": "babies"
+              }
+            },
+            {
+              "name": {
+                "value": "bakery"
+              }
+            },
+            {
+              "name": {
+                "value": "beverages"
+              }
+            },
+            {
+              "name": {
+                "value": "breakfast"
+              }
+            },
+            {
+              "name": {
+                "value": "bulk"
+              }
+            },
+            {
+              "name": {
+                "value": "canned goods"
+              }
+            },
+            {
+              "name": {
+                "value": "dairy eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "deli"
+              }
+            },
+            {
+              "name": {
+                "value": "dry goods pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen"
+              }
+            },
+            {
+              "name": {
+                "value": "household"
+              }
+            },
+            {
+              "name": {
+                "value": "international"
+              }
+            },
+            {
+              "name": {
+                "value": "meat seafood"
+              }
+            },
+            {
+              "name": {
+                "value": "missing"
+              }
+            },
+            {
+              "name": {
+                "value": "other"
+              }
+            },
+            {
+              "name": {
+                "value": "pantry"
+              }
+            },
+            {
+              "name": {
+                "value": "personal care"
+              }
+            },
+            {
+              "name": {
+                "value": "pets"
+              }
+            },
+            {
+              "name": {
+                "value": "produce"
+              }
+            },
+            {
+              "name": {
+                "value": "snacks"
+              }
+            }
+          ],
+          "name": "department"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "reordered",
+                "synonyms": [
+                  "repurchased",
+                  "buybacks",
+                  "buyback",
+                  "repurchases",
+                  "repurchase"
+                ]
+              }
+            }
+          ],
+          "name": "IsReordered"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Simple"
+              }
+            },
+            {
+              "name": {
+                "value": "Soda"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkey"
+              }
+            },
+            {
+              "name": {
+                "value": "7UP"
+              }
+            },
+            {
+              "name": {
+                "value": "Pils"
+              }
+            },
+            {
+              "name": {
+                "value": "Grapes"
+              }
+            },
+            {
+              "name": {
+                "value": "Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Bagels"
+              }
+            },
+            {
+              "name": {
+                "value": "Cava"
+              }
+            },
+            {
+              "name": {
+                "value": "Papaya"
+              }
+            },
+            {
+              "name": {
+                "value": "Wasabi"
+              }
+            },
+            {
+              "name": {
+                "value": "Grater"
+              }
+            },
+            {
+              "name": {
+                "value": "Milano"
+              }
+            },
+            {
+              "name": {
+                "value": "Mint"
+              }
+            },
+            {
+              "name": {
+                "value": "7-Up"
+              }
+            },
+            {
+              "name": {
+                "value": "Syrup"
+              }
+            },
+            {
+              "name": {
+                "value": "Muesli"
+              }
+            },
+            {
+              "name": {
+                "value": "Tape"
+              }
+            },
+            {
+              "name": {
+                "value": "Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Butter"
+              }
+            },
+            {
+              "name": {
+                "value": "Tofu"
+              }
+            },
+            {
+              "name": {
+                "value": "Okra"
+              }
+            },
+            {
+              "name": {
+                "value": "Bagel"
+              }
+            },
+            {
+              "name": {
+                "value": "Bleach"
+              }
+            },
+            {
+              "name": {
+                "value": "Merlot"
+              }
+            },
+            {
+              "name": {
+                "value": "TAB"
+              }
+            },
+            {
+              "name": {
+                "value": "Yams"
+              }
+            },
+            {
+              "name": {
+                "value": "Balm"
+              }
+            },
+            {
+              "name": {
+                "value": "Onions"
+              }
+            },
+            {
+              "name": {
+                "value": "Toma"
+              }
+            },
+            {
+              "name": {
+                "value": "Tongs"
+              }
+            },
+            {
+              "name": {
+                "value": "Brandy"
+              }
+            },
+            {
+              "name": {
+                "value": "Guava"
+              }
+            },
+            {
+              "name": {
+                "value": "Pabst"
+              }
+            },
+            {
+              "name": {
+                "value": "Quince"
+              }
+            },
+            {
+              "name": {
+                "value": "Orzo"
+              }
+            },
+            {
+              "name": {
+                "value": "Lime"
+              }
+            },
+            {
+              "name": {
+                "value": "Ale"
+              }
+            },
+            {
+              "name": {
+                "value": "Jerky"
+              }
+            },
+            {
+              "name": {
+                "value": "Scoops"
+              }
+            },
+            {
+              "name": {
+                "value": "Farro"
+              }
+            },
+            {
+              "name": {
+                "value": "Panko"
+              }
+            },
+            {
+              "name": {
+                "value": "Basil"
+              }
+            },
+            {
+              "name": {
+                "value": "Crepes"
+              }
+            },
+            {
+              "name": {
+                "value": "Hummus"
+              }
+            },
+            {
+              "name": {
+                "value": "Matzos"
+              }
+            },
+            {
+              "name": {
+                "value": "Cumin"
+              }
+            },
+            {
+              "name": {
+                "value": "Dill"
+              }
+            },
+            {
+              "name": {
+                "value": "Gigli"
+              }
+            },
+            {
+              "name": {
+                "value": "Dolmas"
+              }
+            },
+            {
+              "name": {
+                "value": "Flags"
+              }
+            },
+            {
+              "name": {
+                "value": "Pizza"
+              }
+            },
+            {
+              "name": {
+                "value": "2 Cup"
+              }
+            },
+            {
+              "name": {
+                "value": "Fiber"
+              }
+            },
+            {
+              "name": {
+                "value": "Mole"
+              }
+            },
+            {
+              "name": {
+                "value": "#NAME?"
+              }
+            },
+            {
+              "name": {
+                "value": "Brie"
+              }
+            },
+            {
+              "name": {
+                "value": "Mini"
+              }
+            },
+            {
+              "name": {
+                "value": "Radish"
+              }
+            },
+            {
+              "name": {
+                "value": "Lychee"
+              }
+            },
+            {
+              "name": {
+                "value": "Navel"
+              }
+            },
+            {
+              "name": {
+                "value": "Limon"
+              }
+            },
+            {
+              "name": {
+                "value": "Peeler"
+              }
+            },
+            {
+              "name": {
+                "value": "Crispy"
+              }
+            },
+            {
+              "name": {
+                "value": "Wakame"
+              }
+            },
+            {
+              "name": {
+                "value": "Apples"
+              }
+            },
+            {
+              "name": {
+                "value": "Thyme"
+              }
+            },
+            {
+              "name": {
+                "value": "Lager"
+              }
+            },
+            {
+              "name": {
+                "value": "Kiwi"
+              }
+            },
+            {
+              "name": {
+                "value": "Flour"
+              }
+            },
+            {
+              "name": {
+                "value": "Pluot"
+              }
+            },
+            {
+              "name": {
+                "value": "Paneer"
+              }
+            },
+            {
+              "name": {
+                "value": "Cloves"
+              }
+            },
+            {
+              "name": {
+                "value": "Turnip"
+              }
+            },
+            {
+              "name": {
+                "value": "Mangos"
+              }
+            },
+            {
+              "name": {
+                "value": "Salsa"
+              }
+            },
+            {
+              "name": {
+                "value": "Matcha"
+              }
+            },
+            {
+              "name": {
+                "value": "Clara"
+              }
+            },
+            {
+              "name": {
+                "value": "Sours"
+              }
+            },
+            {
+              "name": {
+                "value": "Frost"
+              }
+            },
+            {
+              "name": {
+                "value": "Kimchi"
+              }
+            },
+            {
+              "name": {
+                "value": "Milk"
+              }
+            },
+            {
+              "name": {
+                "value": "Eggnog"
+              }
+            },
+            {
+              "name": {
+                "value": "Rogue"
+              }
+            },
+            {
+              "name": {
+                "value": "Light"
+              }
+            },
+            {
+              "name": {
+                "value": "Beans"
+              }
+            },
+            {
+              "name": {
+                "value": "Drink"
+              }
+            },
+            {
+              "name": {
+                "value": "Lemons"
+              }
+            },
+            {
+              "name": {
+                "value": "Mamey"
+              }
+            },
+            {
+              "name": {
+                "value": "Kolsch"
+              }
+            },
+            {
+              "name": {
+                "value": "805"
+              }
+            },
+            {
+              "name": {
+                "value": "Corn"
+              }
+            },
+            {
+              "name": {
+                "value": "Spoons"
+              }
+            },
+            {
+              "name": {
+                "value": "Chili"
+              }
+            },
+            {
+              "name": {
+                "value": "Ziti"
+              }
+            },
+            {
+              "name": {
+                "value": "Celery"
+              }
+            },
+            {
+              "name": {
+                "value": "White"
+              }
+            },
+            {
+              "name": {
+                "value": "Ginger"
+              }
+            },
+            {
+              "name": {
+                "value": "Fish"
+              }
+            },
+            {
+              "name": {
+                "value": "Salt"
+              }
+            },
+            {
+              "name": {
+                "value": "Baster"
+              }
+            },
+            {
+              "name": {
+                "value": "Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Brut"
+              }
+            },
+            {
+              "name": {
+                "value": "Sage"
+              }
+            },
+            {
+              "name": {
+                "value": "Cereal"
+              }
+            },
+            {
+              "name": {
+                "value": "Salami"
+              }
+            },
+            {
+              "name": {
+                "value": "Turner"
+              }
+            },
+            {
+              "name": {
+                "value": "Straws"
+              }
+            },
+            {
+              "name": {
+                "value": "Gouda"
+              }
+            },
+            {
+              "name": {
+                "value": "Salame"
+              }
+            },
+            {
+              "name": {
+                "value": "Penne"
+              }
+            },
+            {
+              "name": {
+                "value": "Pepsi"
+              }
+            },
+            {
+              "name": {
+                "value": "Pep Ru"
+              }
+            },
+            {
+              "name": {
+                "value": "Jicama"
+              }
+            },
+            {
+              "name": {
+                "value": "Carafe"
+              }
+            },
+            {
+              "name": {
+                "value": "Plums"
+              }
+            },
+            {
+              "name": {
+                "value": "Chives"
+              }
+            },
+            {
+              "name": {
+                "value": "Inari"
+              }
+            },
+            {
+              "name": {
+                "value": "Tuna"
+              }
+            },
+            {
+              "name": {
+                "value": "Orange"
+              }
+            },
+            {
+              "name": {
+                "value": "Chia"
+              }
+            },
+            {
+              "name": {
+                "value": "Carrot"
+              }
+            },
+            {
+              "name": {
+                "value": "Tea"
+              }
+            },
+            {
+              "name": {
+                "value": "Bag"
+              }
+            },
+            {
+              "name": {
+                "value": "Minis"
+              }
+            },
+            {
+              "name": {
+                "value": "Port"
+              }
+            },
+            {
+              "name": {
+                "value": "Candy"
+              }
+            },
+            {
+              "name": {
+                "value": "Banana"
+              }
+            },
+            {
+              "name": {
+                "value": "Egg"
+              }
+            },
+            {
+              "name": {
+                "value": "Tomato"
+              }
+            },
+            {
+              "name": {
+                "value": "Yam"
+              }
+            },
+            {
+              "name": {
+                "value": "1664"
+              }
+            },
+            {
+              "name": {
+                "value": "Water"
+              }
+            },
+            {
+              "name": {
+                "value": "Limes"
+              }
+            },
+            {
+              "name": {
+                "value": "Cotija"
+              }
+            },
+            {
+              "name": {
+                "value": "Rioja"
+              }
+            },
+            {
+              "name": {
+                "value": "Ponzu"
+              }
+            },
+            {
+              "name": {
+                "value": "Stevia"
+              }
+            },
+            {
+              "name": {
+                "value": "Zero"
+              }
+            },
+            {
+              "name": {
+                "value": "Malbec"
+              }
+            },
+            {
+              "name": {
+                "value": "Ultra"
+              }
+            },
+            {
+              "name": {
+                "value": "Plum"
+              }
+            },
+            {
+              "name": {
+                "value": "Leek"
+              }
+            },
+            {
+              "name": {
+                "value": "Bowls"
+              }
+            },
+            {
+              "name": {
+                "value": "Coke"
+              }
+            },
+            {
+              "name": {
+                "value": "Shells"
+              }
+            },
+            {
+              "name": {
+                "value": "Notes"
+              }
+            },
+            {
+              "name": {
+                "value": "Elbows"
+              }
+            },
+            {
+              "name": {
+                "value": "Alum"
+              }
+            },
+            {
+              "name": {
+                "value": "Cocoa"
+              }
+            },
+            {
+              "name": {
+                "value": "Pecans"
+              }
+            },
+            {
+              "name": {
+                "value": "Peas"
+              }
+            },
+            {
+              "name": {
+                "value": "Shrimp"
+              }
+            },
+            {
+              "name": {
+                "value": "Mundet"
+              }
+            },
+            {
+              "name": {
+                "value": "Quark"
+              }
+            },
+            {
+              "name": {
+                "value": "Roses"
+              }
+            },
+            {
+              "name": {
+                "value": "IPA"
+              }
+            },
+            {
+              "name": {
+                "value": "Black"
+              }
+            },
+            {
+              "name": {
+                "value": "Pears"
+              }
+            },
+            {
+              "name": {
+                "value": "Garlic"
+              }
+            },
+            {
+              "name": {
+                "value": "DM Max"
+              }
+            },
+            {
+              "name": {
+                "value": "Naan"
+              }
+            },
+            {
+              "name": {
+                "value": "Yogurt"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy"
+              }
+            },
+            {
+              "name": {
+                "value": "Peach"
+              }
+            },
+            {
+              "name": {
+                "value": "Kraut"
+              }
+            },
+            {
+              "name": {
+                "value": "Porter"
+              }
+            },
+            {
+              "name": {
+                "value": "Rotini"
+              }
+            },
+            {
+              "name": {
+                "value": "Ghee"
+              }
+            },
+            {
+              "name": {
+                "value": "Shiraz"
+              }
+            },
+            {
+              "name": {
+                "value": "Bianco"
+              }
+            },
+            {
+              "name": {
+                "value": "Gin"
+              }
+            },
+            {
+              "name": {
+                "value": "Rose"
+              }
+            },
+            {
+              "name": {
+                "value": "Quinoa"
+              }
+            },
+            {
+              "name": {
+                "value": "2010"
+              }
+            },
+            {
+              "name": {
+                "value": "Squash"
+              }
+            },
+            {
+              "name": {
+                "value": "BBQ"
+              }
+            },
+            {
+              "name": {
+                "value": "Mango"
+              }
+            },
+            {
+              "name": {
+                "value": "Amber"
+              }
+            },
+            {
+              "name": {
+                "value": "Snacks"
+              }
+            },
+            {
+              "name": {
+                "value": "Fennel"
+              }
+            },
+            {
+              "name": {
+                "value": "Kale"
+              }
+            },
+            {
+              "name": {
+                "value": "Syrah"
+              }
+            },
+            {
+              "name": {
+                "value": "Wipes"
+              }
+            },
+            {
+              "name": {
+                "value": "Ham"
+              }
+            },
+            {
+              "name": {
+                "value": "Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Pesto"
+              }
+            },
+            {
+              "name": {
+                "value": "Menudo"
+              }
+            },
+            {
+              "name": {
+                "value": "Sugar"
+              }
+            },
+            {
+              "name": {
+                "value": "Marias"
+              }
+            },
+            {
+              "name": {
+                "value": "Cidre"
+              }
+            },
+            {
+              "name": {
+                "value": "Lard"
+              }
+            },
+            {
+              "name": {
+                "value": "Franks"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon"
+              }
+            },
+            {
+              "name": {
+                "value": "Red"
+              }
+            },
+            {
+              "name": {
+                "value": "Beets"
+              }
+            },
+            {
+              "name": {
+                "value": "Vodka"
+              }
+            },
+            {
+              "name": {
+                "value": "Prunes"
+              }
+            },
+            {
+              "name": {
+                "value": "Tulips"
+              }
+            },
+            {
+              "name": {
+                "value": "Tahini"
+              }
+            },
+            {
+              "name": {
+                "value": "Sake"
+              }
+            },
+            {
+              "name": {
+                "value": "Beer"
+              }
+            },
+            {
+              "name": {
+                "value": "Capers"
+              }
+            },
+            {
+              "name": {
+                "value": "Ice"
+              }
+            },
+            {
+              "name": {
+                "value": "Mojito"
+              }
+            },
+            {
+              "name": {
+                "value": "Onion"
+              }
+            },
+            {
+              "name": {
+                "value": "Kombu"
+              }
+            },
+            {
+              "name": {
+                "value": "Cola"
+              }
+            },
+            {
+              "name": {
+                "value": "Beet"
+              }
+            },
+            {
+              "name": {
+                "value": "Masher"
+              }
+            },
+            {
+              "name": {
+                "value": "Polish"
+              }
+            },
+            {
+              "name": {
+                "value": "Matzo"
+              }
+            },
+            {
+              "name": {
+                "value": "Bueno"
+              }
+            },
+            {
+              "name": {
+                "value": "Diet"
+              }
+            },
+            {
+              "name": {
+                "value": "Apple"
+              }
+            },
+            {
+              "name": {
+                "value": "KitKat"
+              }
+            },
+            {
+              "name": {
+                "value": "Dates"
+              }
+            },
+            {
+              "name": {
+                "value": "Lemon"
+              }
+            },
+            {
+              "name": {
+                "value": "Coffee"
+              }
+            },
+            {
+              "name": {
+                "value": "Bamba"
+              }
+            },
+            {
+              "name": {
+                "value": "Puffs"
+              }
+            },
+            {
+              "name": {
+                "value": "Spread"
+              }
+            },
+            {
+              "name": {
+                "value": "Blanc"
+              }
+            },
+            {
+              "name": {
+                "value": "Honey"
+              }
+            },
+            {
+              "name": {
+                "value": "Porto"
+              }
+            }
+          ],
+          "name": "productName"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "prepared soups salads"
+              }
+            },
+            {
+              "name": {
+                "value": "specialty cheeses"
+              }
+            },
+            {
+              "name": {
+                "value": "energy granola bars"
+              }
+            },
+            {
+              "name": {
+                "value": "instant foods"
+              }
+            },
+            {
+              "name": {
+                "value": "marinades meat preparation"
+              }
+            },
+            {
+              "name": {
+                "value": "other"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged meat"
+              }
+            },
+            {
+              "name": {
+                "value": "bakery desserts"
+              }
+            },
+            {
+              "name": {
+                "value": "pasta sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "kitchen supplies"
+              }
+            },
+            {
+              "name": {
+                "value": "cold flu allergy"
+              }
+            },
+            {
+              "name": {
+                "value": "fresh pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "prepared meals"
+              }
+            },
+            {
+              "name": {
+                "value": "tofu meat alternatives"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged seafood"
+              }
+            },
+            {
+              "name": {
+                "value": "fresh herbs"
+              }
+            },
+            {
+              "name": {
+                "value": "baking ingredients"
+              }
+            },
+            {
+              "name": {
+                "value": "bulk dried fruits vegetables"
+              }
+            },
+            {
+              "name": {
+                "value": "oils vinegars"
+              }
+            },
+            {
+              "name": {
+                "value": "oral hygiene"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "hair care"
+              }
+            },
+            {
+              "name": {
+                "value": "popcorn jerky"
+              }
+            },
+            {
+              "name": {
+                "value": "fresh fruits"
+              }
+            },
+            {
+              "name": {
+                "value": "soap"
+              }
+            },
+            {
+              "name": {
+                "value": "coffee"
+              }
+            },
+            {
+              "name": {
+                "value": "beers coolers"
+              }
+            },
+            {
+              "name": {
+                "value": "red wines"
+              }
+            },
+            {
+              "name": {
+                "value": "honeys syrups nectars"
+              }
+            },
+            {
+              "name": {
+                "value": "latino foods"
+              }
+            },
+            {
+              "name": {
+                "value": "refrigerated"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged produce"
+              }
+            },
+            {
+              "name": {
+                "value": "kosher foods"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen meat seafood"
+              }
+            },
+            {
+              "name": {
+                "value": "poultry counter"
+              }
+            },
+            {
+              "name": {
+                "value": "butter"
+              }
+            },
+            {
+              "name": {
+                "value": "ice cream ice"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen meals"
+              }
+            },
+            {
+              "name": {
+                "value": "seafood counter"
+              }
+            },
+            {
+              "name": {
+                "value": "dog food care"
+              }
+            },
+            {
+              "name": {
+                "value": "cat food care"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen vegan vegetarian"
+              }
+            },
+            {
+              "name": {
+                "value": "buns rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "eye ear care"
+              }
+            },
+            {
+              "name": {
+                "value": "candy chocolate"
+              }
+            },
+            {
+              "name": {
+                "value": "mint gum"
+              }
+            },
+            {
+              "name": {
+                "value": "vitamins supplements"
+              }
+            },
+            {
+              "name": {
+                "value": "breakfast bars pastries"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged poultry"
+              }
+            },
+            {
+              "name": {
+                "value": "fruit vegetable snacks"
+              }
+            },
+            {
+              "name": {
+                "value": "preserved dips spreads"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen breakfast"
+              }
+            },
+            {
+              "name": {
+                "value": "cream"
+              }
+            },
+            {
+              "name": {
+                "value": "paper goods"
+              }
+            },
+            {
+              "name": {
+                "value": "shave needs"
+              }
+            },
+            {
+              "name": {
+                "value": "diapers wipes"
+              }
+            },
+            {
+              "name": {
+                "value": "granola"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen breads doughs"
+              }
+            },
+            {
+              "name": {
+                "value": "canned meals beans"
+              }
+            },
+            {
+              "name": {
+                "value": "trash bags liners"
+              }
+            },
+            {
+              "name": {
+                "value": "cookies cakes"
+              }
+            },
+            {
+              "name": {
+                "value": "white wines"
+              }
+            },
+            {
+              "name": {
+                "value": "grains rice dried goods"
+              }
+            },
+            {
+              "name": {
+                "value": "energy sports drinks"
+              }
+            },
+            {
+              "name": {
+                "value": "protein meal replacements"
+              }
+            },
+            {
+              "name": {
+                "value": "asian foods"
+              }
+            },
+            {
+              "name": {
+                "value": "fresh dips tapenades"
+              }
+            },
+            {
+              "name": {
+                "value": "bulk grains rice dried goods"
+              }
+            },
+            {
+              "name": {
+                "value": "soup broth bouillon"
+              }
+            },
+            {
+              "name": {
+                "value": "digestion"
+              }
+            },
+            {
+              "name": {
+                "value": "refrigerated pudding desserts"
+              }
+            },
+            {
+              "name": {
+                "value": "condiments"
+              }
+            },
+            {
+              "name": {
+                "value": "facial care"
+              }
+            },
+            {
+              "name": {
+                "value": "dish detergents"
+              }
+            },
+            {
+              "name": {
+                "value": "laundry"
+              }
+            },
+            {
+              "name": {
+                "value": "indian foods"
+              }
+            },
+            {
+              "name": {
+                "value": "soft drinks"
+              }
+            },
+            {
+              "name": {
+                "value": "crackers"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen pizza"
+              }
+            },
+            {
+              "name": {
+                "value": "deodorants"
+              }
+            },
+            {
+              "name": {
+                "value": "canned jarred vegetables"
+              }
+            },
+            {
+              "name": {
+                "value": "baby accessories"
+              }
+            },
+            {
+              "name": {
+                "value": "fresh vegetables"
+              }
+            },
+            {
+              "name": {
+                "value": "milk"
+              }
+            },
+            {
+              "name": {
+                "value": "food storage"
+              }
+            },
+            {
+              "name": {
+                "value": "eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "more household"
+              }
+            },
+            {
+              "name": {
+                "value": "spreads"
+              }
+            },
+            {
+              "name": {
+                "value": "salad dressing toppings"
+              }
+            },
+            {
+              "name": {
+                "value": "cocoa drink mixes"
+              }
+            },
+            {
+              "name": {
+                "value": "soy lactosefree"
+              }
+            },
+            {
+              "name": {
+                "value": "baby food formula"
+              }
+            },
+            {
+              "name": {
+                "value": "breakfast bakery"
+              }
+            },
+            {
+              "name": {
+                "value": "tea"
+              }
+            },
+            {
+              "name": {
+                "value": "canned meat seafood"
+              }
+            },
+            {
+              "name": {
+                "value": "lunch meat"
+              }
+            },
+            {
+              "name": {
+                "value": "baking supplies decor"
+              }
+            },
+            {
+              "name": {
+                "value": "juice nectars"
+              }
+            },
+            {
+              "name": {
+                "value": "canned fruit applesauce"
+              }
+            },
+            {
+              "name": {
+                "value": "missing"
+              }
+            },
+            {
+              "name": {
+                "value": "air fresheners candles"
+              }
+            },
+            {
+              "name": {
+                "value": "baby bath body care"
+              }
+            },
+            {
+              "name": {
+                "value": "ice cream toppings"
+              }
+            },
+            {
+              "name": {
+                "value": "spices seasonings"
+              }
+            },
+            {
+              "name": {
+                "value": "doughs gelatins bake mixes"
+              }
+            },
+            {
+              "name": {
+                "value": "hot dogs bacon sausage"
+              }
+            },
+            {
+              "name": {
+                "value": "chips pretzels"
+              }
+            },
+            {
+              "name": {
+                "value": "other creams cheeses"
+              }
+            },
+            {
+              "name": {
+                "value": "skin care"
+              }
+            },
+            {
+              "name": {
+                "value": "pickled goods olives"
+              }
+            },
+            {
+              "name": {
+                "value": "plates bowls cups flatware"
+              }
+            },
+            {
+              "name": {
+                "value": "bread"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen juice"
+              }
+            },
+            {
+              "name": {
+                "value": "cleaning products"
+              }
+            },
+            {
+              "name": {
+                "value": "water seltzer sparkling water"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen produce"
+              }
+            },
+            {
+              "name": {
+                "value": "nuts seeds dried fruit"
+              }
+            },
+            {
+              "name": {
+                "value": "first aid"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen dessert"
+              }
+            },
+            {
+              "name": {
+                "value": "yogurt"
+              }
+            },
+            {
+              "name": {
+                "value": "cereal"
+              }
+            },
+            {
+              "name": {
+                "value": "meat counter"
+              }
+            },
+            {
+              "name": {
+                "value": "packaged vegetables fruits"
+              }
+            },
+            {
+              "name": {
+                "value": "spirits"
+              }
+            },
+            {
+              "name": {
+                "value": "trail mix snack mix"
+              }
+            },
+            {
+              "name": {
+                "value": "feminine care"
+              }
+            },
+            {
+              "name": {
+                "value": "body lotions soap"
+              }
+            },
+            {
+              "name": {
+                "value": "tortillas flat bread"
+              }
+            },
+            {
+              "name": {
+                "value": "frozen appetizers sides"
+              }
+            },
+            {
+              "name": {
+                "value": "hot cereal pancake mixes"
+              }
+            },
+            {
+              "name": {
+                "value": "dry pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "beauty"
+              }
+            },
+            {
+              "name": {
+                "value": "muscles joints pain relief"
+              }
+            },
+            {
+              "name": {
+                "value": "specialty wines champagnes"
+              }
+            }
+          ],
+          "name": "aisleName"
+        }
+      ]
+    }
+  },
+  "version": "52"
+}

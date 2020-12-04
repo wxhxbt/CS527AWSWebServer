@@ -1,0 +1,19 @@
+﻿find the location of {product}
+where is {product}
+find the location of the product {product}
+where is the product {product}
+find top {num} products which has the {seq} {reorder} ratio in {dep}
+find top {num} products with the {seq} {reorder} ratio in {dep}
+Which product has the {seq} {reorder} ratio in {dep}
+find the product with the {seq} {reorder} ratio in {dep}
+Which product has the {seq} {reorder} ratio
+find top {num} products which has the {seq} {reorder} ratio
+find the product which has the {seq} {reorder} ratio
+find top {num} products with the {seq} {reorder} ratio
+find the product with the {seq} {reorder} ratio
+what is the {seq} popular product in {dep}
+what is the {seq} popular product
+find top {num} {seq} popular products in {dep}
+find the {seq} product in {dep}
+find top {num} {seq} popular products
+find the {seq} popular product
