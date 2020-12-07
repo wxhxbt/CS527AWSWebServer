@@ -1,0 +1,84 @@
+{% load render_table from django_tables2 %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/dca044ab49.js" crossorigin="anonymous"></script>
+    <title>Database Query System</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/home">Database Query System <i class="fas fa-database"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/home" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Databases
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/instacart">Instacart</a>
+              <a class="dropdown-item" href="/abc_retail">ABC_Retail</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/alexa">Alexa <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+      <span class="navbar-brand mb-0 h1"><i class="fab fa-aws fa-lg"></i></span>
+    </nav>
+    <div id="input" style="height:300px;width:50%;margin:auto;">
+        <form name= "form1" action="/search_text" method='get' style="margin-top: 20px">
+            <select class="form-control" id="formSelect" name="slc">
+                <option value="rds" selected>RDS (MariaDB)</option>
+                <option value="redshift">RedShift</option>
+            </select>
+            <label for="edtInputWord"></label>
+            <textarea class="form-control form-control-lg" id="edtInputWord" name ="txt" rows="7" style="width:100%;" placeholder="Please input your query here. If you choose RedShift, add instacart. before tablename. For example: instacart.AISLE">{{ txt_cont }}</textarea>
+            <div style="float:right; margin-top: 15px; margin-bottom: 18px"><button class="btn btn-outline-dark" type="submit">submit <i class="fas fa-check"></i></button></div>
+        </form>
+        {% if messages %}
+            <ul class="messages" style="margin-top: 5px">
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags == 'error'%}danger{% else %}{{ message.tags }}{% endif %}"
+                            id="msg" role="alert" style="float: left; margin-left: -40px">
+                        {% if message.tags == 'success' or message.tags == 'info' %}<i class="fas fa-check-circle"></i>{% else %}<i class="fas fa-exclamation-circle"></i>{% endif %}
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div id="content" style="width:50%;margin:auto;">
+        {% if table %}
+            {% render_table table %}
+        {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#edtInputWord").keypress(function (e) {
+            if(e.which == 13 && e.shiftKey) {
+                $(this).closest("form").submit();
+                e.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        setTimeout(function(){
+            if ($('#msg').length > 0){
+                $('#msg').remove();
+            }
+        }, 5000)
+    </script>
+</body>
+</html>
